@@ -1,0 +1,99 @@
+﻿@model Order
+
+@* asp-action="Checkout" will invoke a Checkout action on a current controller (since its not specified) *@
+<form asp-action="Checkout" method="post" class="form-horizontal" role="form" asp-antiforgery="true">
+    @* asp-antiforgery generates a hidden input with anti-forgery token in this form, to prevent CSRF attacks
+        Something like that will be generated:
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8NfJLRKYHoZCiS3GREhDKeEKHIMiVzRnm1ROlnwuUvCoZLEeoy9ZEdqMjnIu2gRG7vymLYP3Wf3nJlrpMysYxG0FmeVDi_JeY4wmStqpJ6WwOA9OOZlo9aJaKCuSDQi4_c36bQ-dp_CTV1fI_rNgVhM">*@
+
+    <h4>You're just one step away from your delicious pies.</h4>
+
+    @* Validation tag helper looks for a div with asp-validation-summary attribute and others... *@
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="FirstName" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="AddressLine1" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="AddressLine1" class="form-control" />
+            <span asp-validation-for="AddressLine1" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AddressLine2" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="AddressLine2" class="form-control" />
+            <span asp-validation-for="AddressLine2" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ZipCode" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="ZipCode" class="form-control" />
+            <span asp-validation-for="ZipCode" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="City" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="State" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="State" class="form-control" />
+            <span asp-validation-for="State" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Country" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Country" class="form-control" />
+            <span asp-validation-for="Country" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Complete Order" />
+        </div>
+    </div>
+
+</form>
