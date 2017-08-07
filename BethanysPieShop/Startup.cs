@@ -71,10 +71,12 @@ namespace BethanysPieShop
             {
                 app.UseDeveloperExceptionPage();
                 //app.UseDatabaseErrorPage();
+                app.UseStatusCodePages();
             }
             else
             {
-                app.UseExceptionHandler("/BethanyPieShopError");
+                // Use our custom exception handler (AppExceptionController)
+                app.UseExceptionHandler("/AppException");
             }
 
             app.UseStatusCodePages();
